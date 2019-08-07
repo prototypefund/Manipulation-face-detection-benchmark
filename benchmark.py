@@ -74,6 +74,8 @@ IMAGE_PATH = "images/test.png"
 RESULT_FILE = "results/runtimes.json"
 REPLICATIONS = 10
 
+assert Path(IMAGE_PATH).exists()
+
 scales = [1.0, 0.75, 0.25]
 grayscale = [False, True]
 methods = [dlib_hog, dlib_cnn, opencv_haar, opencv_cnn]
