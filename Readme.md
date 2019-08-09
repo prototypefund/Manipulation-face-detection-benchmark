@@ -1,8 +1,36 @@
-1. Install dlib and opencv
-2. sh download_models.sh
-3. Find an image that contains faces, resize to 1280*720
-4. Configure image in benchmark.py
-5. python benchmark.py
-6. python plot.py
+# Runtime comparison of different face detection / recognition methods
 
-Results of the benchmark can be found in the results directory.
+## Why?
+
+To figure out what can be reasonably run on NVIDIA Jetson. Not evaluating the quality
+of the models, only runtime is relevant.
+
+## Installation
+
+Tested with Python 3.7. Before installing the requirements, check installation instructions
+for dlib and opencv to make sure you have all necessary libraries installed.
+
+```
+pip install -r requirements.txt
+sh download_models.sh
+```
+
+## Testing
+
+There are no automatic tests. You can manually check that all models are running correctly,
+you can run:
+
+`
+python test_manual.py
+`
+
+This will create a directory `results/test_images` where you can visually inspect
+that the generated face detections and face croppings make sense.
+
+## Running
+
+```
+python run_benchmarks.py
+python plot.py
+```
+The generated metrics will be in `results/data`, generated plots in `results/plots`.

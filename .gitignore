@@ -1,4 +1,4 @@
 .idea
-images
-models
 results
+models
+__pycache__
